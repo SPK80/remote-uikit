@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "strict": false, // Enable all strict type checking options
+    "module": "commonjs",
+    "target": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true, // Skip type checking of all declaration files
+    "allowJs": true, // Allow JavaScript files to be compiled
+    "jsx": "react", // Support JSX in .tsx files
+    "sourceMap": true // Generate corrresponding .map file
+  }
+}
