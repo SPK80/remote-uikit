@@ -9,7 +9,7 @@ export default (_, argv) => {
 
   return {
     output: {
-      publicPath: "http://localhost:3001/",
+      publicPath: "auto",
       path: path.join(__dirname, "public/"),
     },
 
