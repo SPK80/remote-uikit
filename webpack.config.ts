@@ -2,11 +2,15 @@ import HtmlWebPackPlugin from "html-webpack-plugin";
 import ModuleFederationPlugin from "webpack/lib/container/ModuleFederationPlugin.js";
 import Dotenv from "dotenv-webpack";
 import { exposes } from "./src/components/uikit/exposes";
+import path from "path";
 
 export default (_, argv) => {
+  console.log("__dirname", __dirname);
+
   return {
     output: {
       publicPath: "http://localhost:3001/",
+      path: path.join(__dirname, "public/"),
     },
 
     resolve: {
