@@ -3,10 +3,9 @@ import ModuleFederationPlugin from "webpack/lib/container/ModuleFederationPlugin
 import Dotenv from "dotenv-webpack";
 import { exposes } from "./src/components/uikit/exposes";
 import path from "path";
+import { dependencies } from "./package.json";
 
 export default (_, argv) => {
-  console.log("__dirname", __dirname);
-
   return {
     output: {
       publicPath: "auto",
@@ -51,7 +50,7 @@ export default (_, argv) => {
         filename: "remoteEntry.js",
         remotes: {},
         exposes,
-        shared: ["react", "react-dom"],
+        shared: { ...dependencies },
       }),
       new HtmlWebPackPlugin({
         template: "./src/index.html",

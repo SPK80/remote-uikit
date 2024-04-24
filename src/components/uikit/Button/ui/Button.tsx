@@ -1,4 +1,5 @@
-import React, { FC, ReactNode, useState } from "react";
+import React, { FC, ReactNode } from "react";
+import { Button as AntdButton } from "antd";
 
 interface IProps {
   onClick?: () => void;
@@ -6,31 +7,11 @@ interface IProps {
   className?: string;
 }
 
-const style: React.CSSProperties = {
-  color: "red",
-  background: "yellow",
-  border: "1px solid blue",
-  borderRadius: 4,
-  padding: "4px 10px",
-};
-
 const Button: FC<IProps> = ({ children, onClick, className }) => {
-  const [clicked, setClicked] = useState("");
-
   return (
-    <button
-      style={style}
-      className={className}
-      onClick={() => {
-        setClicked("clicked");
-        setTimeout(() => {
-          setClicked("");
-        }, 2000);
-        onClick && onClick();
-      }}
-    >
-      {clicked || children}
-    </button>
+    <AntdButton className={className} type="primary" onClick={onClick}>
+      {children}
+    </AntdButton>
   );
 };
 

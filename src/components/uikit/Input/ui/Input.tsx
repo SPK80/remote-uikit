@@ -1,4 +1,5 @@
 import React, { FC, ReactNode } from "react";
+import { Input as AntdInput } from "antd";
 
 interface IProps {
   onChange?: (value: string) => void;
@@ -6,24 +7,15 @@ interface IProps {
   className?: string;
 }
 
-const style: React.CSSProperties = {
-  color: "red",
-  background: "yellow",
-  border: "1px solid blue",
-  borderRadius: 4,
-  padding: "4px 10px",
-};
-
 const Input: FC<IProps> = ({ children, onChange, className }) => {
   return (
-    <input
-      style={style}
+    <AntdInput
       className={className}
       placeholder="input"
       onChange={(e) => onChange && onChange(e.currentTarget.value)}
     >
       {children}
-    </input>
+    </AntdInput>
   );
 };
 

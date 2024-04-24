@@ -12,6 +12,7 @@ const App = () => (
     <div>Language: TypeScript</div>
     <div>CSS: Empty CSS</div>
     <Button>Кнопка</Button>
+    <br />
     <Input onChange={console.log} />
   </div>
 );
